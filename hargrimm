@@ -10,6 +10,8 @@ class Home(FullListWidget):
         self.content = sorted(self.dictionary.keys())
         FullListWidget.__init__(self, self.content)
 
+    def get_title(self):
+        return "Hargrimm 0.0.git - Home"
 
 if __name__ == "__main__":
     run(Home())
