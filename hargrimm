@@ -6,12 +6,10 @@ from irenicurse import run
 class Home(FullListWidget):
     def __init__(self, url="http://localhost:8080"):
         self.url = url
-        self.dictionary = self.get_home_list()
+        self.dictionary = loads(urlopen(self.url).read())
         self.content = sorted(self.dictionary.keys())
         FullListWidget.__init__(self, self.content)
 
-    def get_home_list(self):
-        return loads(urlopen(self.url).read())
 
 if __name__ == "__main__":
     run(Home())
