@@ -13,7 +13,7 @@ class Generic(FullListWidget):
         FullListWidget.__init__(self, self.content)
 
 class Home(FullListWidget):
-    def __init__(self, url="http://localhost:8080"):
+    def __init__(self, url="http://localhost:4242"):
         self.url = url
         self.dictionary = loads(urlopen(self.url).read())
         self.content = sorted(self.dictionary.keys())
